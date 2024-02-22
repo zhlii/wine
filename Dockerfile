@@ -23,13 +23,13 @@ RUN apt-get install -y --no-install-recommends apt-transport-https ca-certificat
     apt-mark manual $savedAptMark > /dev/null; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     \
-    dpkg --add-architecture i386; \            
+    dpkg --add-architecture i386; \
     echo "deb [arch=amd64,i386] https://mirrors.tuna.tsinghua.edu.cn/wine-builds/debian/ bullseye main" > /etc/apt/sources.list.d/winehq.list;    
 
 # https://dl.winehq.org/wine-builds/debian/dists/bullseye/main/binary-amd64/?C=N;O=D
 # https://www.winehq.org/news/
-ENV WINE_VERSION 8.0.2
-ENV WINE_DEB_VERSION 8.0.2~bullseye-1
+ENV WINE_VERSION 9.0.0.0
+ENV WINE_DEB_VERSION 9.0.0.0~bullseye-1
 
 RUN set -eux; \
     { \
